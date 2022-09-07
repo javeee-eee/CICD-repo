@@ -5,11 +5,11 @@
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
 	<version>8.3.3</version>
-	<name>Java Home myweb</name>
+	<name>CICD pipeline</name>
 	<url>http://maven.apache.org</url>
 	
 	<properties>
-		<docker.image.prefix>kammana</docker.image.prefix>
+		<docker.image.prefix>CICD</docker.image.prefix>
 	</properties>	
 	<dependencies>
 		<dependency>
