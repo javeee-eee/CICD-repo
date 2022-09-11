@@ -1,0 +1,29 @@
+---
+- name: test CICD pipeline project
+  hosts: dev
+  become: True #Rootuser
+  tasks:
+    - name: install python pip 
+      yum: 
+        name: python-pip
+        state: present
+    - name: install docker
+      yum: 
+        name: docker
+        state: present
+    - name: start docker
+      service: 
+        name: docker
+        state: started
+        enabled: yes    
+    - name: install docker-py module
+      service:
+        name: docker-py
+        state: present
+    - name: Start the container from docker image
+      docker_container:
+        name: testpipeine
+        image: "jav160696/testpipeine:latest"
+        state: started
+        ports:
+        - 0.0.0.0:8080:8080
